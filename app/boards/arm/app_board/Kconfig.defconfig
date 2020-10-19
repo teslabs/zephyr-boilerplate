@@ -1,0 +1,10 @@
+# Application board
+# Copyright (c) 2020 Teslabs Engineering S.L.
+# SPDX-License-Identifier: Apache-2.0
+
+if BOARD_APP_BOARD
+
+config BOARD
+	default "app_board"
+
+endif # BOARD_APP_BOARD

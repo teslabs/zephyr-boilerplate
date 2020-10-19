@@ -1,0 +1,21 @@
+# Copyright (c) 2020 Teslabs Engineering S.L.
+# SPDX-License-Identifier: Apache-2.0
+
+# zephyr
+zephyr
+bootloader
+modules
+tools
+build
+.west
+
+# python
+.venv
+
+# editors
+*.swp
+.vscode
+
+# docs
+docs/api
+docs/doxyoutput

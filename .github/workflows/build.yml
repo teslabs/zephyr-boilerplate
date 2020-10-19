@@ -1,0 +1,46 @@
+# Copyright (c) 2020 Teslabs Engineering S.L.
+# SPDX-License-Identifier: Apache-2.0
+
+name: Build
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: teslabs/zephyr-arm:latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Cache Zephyr
+        uses: actions/cache@v2
+        with:
+          path: |
+            bootloader/
+            modules/
+            tools/
+            zephyr/
+          key: ${{ hashFiles('app/west.yml') }}
+      - name: Initialize
+        run: |
+          west init -l app
+          west update
+          west zephyr-export
+          pip3 install -r zephyr/scripts/requirements-base.txt
+          pip3 install -r docs/requirements.txt
+      - name: Build firmware
+        run: |
+          west build -s app
+      - name: Archive firmware
+        uses: actions/upload-artifact@v2
+        with:
+          name: firmware
+          path: build/zephyr/zephyr.*
+      - name: Build documentation
+        run: |
+          sphinx-build -b html docs build/docs
+      - name: Archive documentation
+        uses: actions/upload-artifact@v2
+        with:
+          name: docs
+          path: build/docs

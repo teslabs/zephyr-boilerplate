@@ -1,0 +1,7 @@
+# Application board configuration
+# Copyright (c) 2020 Teslabs Engineering S.L.
+# SPDX-License-Identifier: Apache-2.0
+
+config BOARD_APP_BOARD
+	bool "Application Development Board"
+	depends on SOC_STM32F405XG

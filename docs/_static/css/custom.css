@@ -1,0 +1,23 @@
+.caption, .figure {
+  text-align: center;
+}
+
+iframe {
+  border: none;
+}
+
+.wy-side-nav-search {
+  background-color: #000;
+}
+
+.wy-side-nav-search input[type="text"] {
+  border-color: transparent;
+}
+
+.wy-table-responsive table td {
+  white-space: normal;
+}
+
+.wy-nav-content {
+  max-width: 1200px !important;
+}
