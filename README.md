@@ -37,3 +37,13 @@ Once you have built the application you can flash it by running:
 ``` sh
 west flash
 ```
+
+# Tests
+
+You can run tests by executing:
+
+```sh
+./zephyr/scripts/sanitycheck -T app/tests
+```
+
+You can use regular `sanitycheck` arguments to filter, list, run on device, etc.
