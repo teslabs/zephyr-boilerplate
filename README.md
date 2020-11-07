@@ -29,7 +29,7 @@ west build -s app -b app_board
 A debug configuration is also provided, you can enable it by running:
 
 ``` sh
-west build -s app -- -DOVERLAY_CONFIG=debug.conf
+west build -s app -b app_board -- -DOVERLAY_CONFIG=debug.conf
 ```
 
 Once you have built the application you can flash it by running:
