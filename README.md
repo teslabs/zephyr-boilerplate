@@ -23,7 +23,7 @@ west update
 At this point you can build the application as usual:
 
 ``` sh
-west build -s app
+west build -s app -b app_board
 ```
 
 A debug configuration is also provided, you can enable it by running:
